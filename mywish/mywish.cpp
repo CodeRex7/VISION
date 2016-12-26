@@ -36,12 +36,12 @@ void createTrackbars(){
 }
 int main(int argc, _TCHAR* argv[])
 {
-	Mat img, gray,HSV,threshold2,img1,canny_output,threshold3,threshold4;
+	Mat img, gray,HSV,resources,img1,canny_output,towncentre,obstacles;
 	createTrackbars();
 	while (1)
 	{
 
-		img = imread("C:/Users/SoumyaGourab/Documents/Visual Studio 2013/Projects/mywish/1.jpg");
+		img = imread("C:/Users/SoumyaGourab/Documents/Visual Studio 2013/Projects/mywish/14.jpg");
 		if (img.empty())
 		{
 			cout << "The image could not be loaded";
@@ -55,21 +55,21 @@ int main(int argc, _TCHAR* argv[])
 		cvtColor(img, HSV, COLOR_BGR2HSV);
 		Canny(gray, canny_output, thresh, thresh * 2, 3);
 		imshow("Canny", canny_output);
-		inRange(HSV, Scalar(30, 241, 0), Scalar(30, 255, 205), threshold2);
-		inRange(HSV, Scalar(10, 0, 0), Scalar(16, 255, 255), threshold3);
-		inRange(HSV, Scalar(89, 241, 185), Scalar(93,255, 201), threshold4);
+		inRange(HSV, Scalar(30, 241, 0), Scalar(30, 255, 205), resources);
+		inRange(HSV, Scalar(10, 0, 0), Scalar(16, 255, 255), towncentre);
+		inRange(HSV, Scalar(89, 241, 185), Scalar(93,255, 201), obstacles);
 		//threshold(gray, gray, thresh, 255, THRESH_BINARY);
-		imshow("gray", threshold2);
-		imshow("gray2", threshold3);
-		imshow("gray3", threshold4);
+		imshow("gray", resources);
+		imshow("gray2", towncentre);
+		imshow("gray3", obstacles);
 
 		vector< vector<Point> > contours;
 		vector< vector<Point> > entry;
 		vector< vector<Point> > water;
 		vector<Vec4i> hierarchy;
-		findContours(threshold2, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
-		findContours(threshold3, entry, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
-		findContours(threshold4, water, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+		findContours(resources, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+		findContours(towncentre, entry, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+		findContours(obstacles, water, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
 		cout << contours.size();
 		cout << entry.size();
 		cout << water.size();
@@ -116,8 +116,8 @@ int main(int argc, _TCHAR* argv[])
 			//cout << mc_food[i] << endl;
 		}
 
-		Mat draw_tri = Mat::zeros(threshold2.size(), CV_8UC3);
-		Mat draw_sqr = Mat::zeros(threshold2.size(), CV_8UC3);
+		Mat draw_tri = Mat::zeros(resources.size(), CV_8UC3);
+		Mat draw_sqr = Mat::zeros(resources.size(), CV_8UC3);
 		vector<Point> shape;
 		vector<Point2f> mc_tri(contours.size());
 		vector<Point2f> mc_sqr(contours.size());
