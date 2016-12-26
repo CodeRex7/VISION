@@ -36,12 +36,12 @@ void createTrackbars(){
 }
 int main(int argc, _TCHAR* argv[])
 {
-	Mat img, gray,HSV,resources,img1,canny_output,towncentre,obstacles;
+	Mat img, gray,HSV,resources,img1,canny_output,towncentre,obstacles,marker_1,marker_2;
 	createTrackbars();
 	while (1)
 	{
 
-		img = imread("C:/Users/SoumyaGourab/Documents/Visual Studio 2013/Projects/mywish/14.jpg");
+		img = imread("C:/Users/SoumyaGourab/Documents/Visual Studio 2013/Projects/mywish/11.jpg");
 		if (img.empty())
 		{
 			cout << "The image could not be loaded";
@@ -58,24 +58,37 @@ int main(int argc, _TCHAR* argv[])
 		inRange(HSV, Scalar(30, 241, 0), Scalar(30, 255, 205), resources);
 		inRange(HSV, Scalar(10, 0, 0), Scalar(16, 255, 255), towncentre);
 		inRange(HSV, Scalar(89, 241, 185), Scalar(93,255, 201), obstacles);
+		inRange(HSV, Scalar(114, 171, 201), Scalar(121, 180, 211), marker_1);
+		inRange(HSV, Scalar(0, 255, 255), Scalar(0, 255, 255), marker_2);
 		//threshold(gray, gray, thresh, 255, THRESH_BINARY);
-		imshow("gray", resources);
-		imshow("gray2", towncentre);
-		imshow("gray3", obstacles);
+		imshow("Resources", resources);
+		imshow("TOwncentre", towncentre);
+		imshow("Obsatcles", obstacles);
+		imshow("MArker_1", marker_1);
+		imshow("MArker_2", marker_2);
 
 		vector< vector<Point> > contours;
 		vector< vector<Point> > entry;
 		vector< vector<Point> > water;
+		vector< vector<Point> > bot_mark1;
+		vector< vector<Point> > bot_mark2;
 		vector<Vec4i> hierarchy;
 		findContours(resources, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
 		findContours(towncentre, entry, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
 		findContours(obstacles, water, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+		findContours(marker_1, bot_mark1, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
+		findContours(marker_2, bot_mark2, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
 		cout << contours.size();
 		cout << entry.size();
 		cout << water.size();
+		cout << bot_mark1.size();
+		cout << bot_mark2.size();
+		
 		vector<Moments> m_food(contours.size());
 		vector<Moments> m_ckpt(entry.size());
 		vector<Moments> m_water(water.size());
+		vector<Moments> m_bot_mark1(bot_mark1.size());
+		vector<Moments> m_bot_mark2(bot_mark2.size());		
 		
 		for (int i = 0; i < contours.size(); i++)
 		{
@@ -89,10 +102,21 @@ int main(int argc, _TCHAR* argv[])
 		{
 			m_water[i] = moments(water[i], false);
 		}
+		for (int i = 0; i < bot_mark1.size(); i++)
+		{
+			m_bot_mark1[i] = moments(bot_mark1[i], false);
+		}
+		for (int i = 0; i < bot_mark2.size(); i++)
+		{
+			m_bot_mark2[i] = moments(bot_mark2[i], false);
+		}
+		
 
 		vector<Point2f> mc_food(contours.size());
 		vector<Point2f> mc_ckpt(entry.size());
 		vector<Point2f> mc_water(water.size());
+		vector<Point2f> mc_bot_mark1(bot_mark1.size());
+		vector<Point2f> mc_bot_mark2(bot_mark2.size());
 		
 		for (int i = 0; i < contours.size(); i++)
 		{
@@ -115,7 +139,21 @@ int main(int argc, _TCHAR* argv[])
 
 			//cout << mc_food[i] << endl;
 		}
+		for (int i = 0; i < bot_mark1.size(); i++)
+		{
+			mc_bot_mark1[i] = Point2f(m_bot_mark1[i].m10 / m_bot_mark1[i].m00, m_bot_mark1[i].m01 / m_bot_mark1[i].m00);
+			circle(img, mc_bot_mark1[i], 5, Scalar(0, 0, 255));
 
+			//cout << mc_food[i] << endl;
+		}
+		for (int i = 0; i < bot_mark2.size(); i++)
+		{
+			mc_bot_mark2[i] = Point2f(m_bot_mark2[i].m10 / m_bot_mark2[i].m00, m_bot_mark2[i].m01 / m_bot_mark2[i].m00);
+			circle(img, mc_bot_mark2[i], 5, Scalar(255, 0, 0));
+
+			//cout << mc_food[i] << endl;
+		}
+		
 		Mat draw_tri = Mat::zeros(resources.size(), CV_8UC3);
 		Mat draw_sqr = Mat::zeros(resources.size(), CV_8UC3);
 		vector<Point> shape;
@@ -166,6 +204,14 @@ int main(int argc, _TCHAR* argv[])
 			for (int i = 0; i < water.size(); i++)
 			{
 				cout << mc_water[i] << endl;
+			}
+			for (int i = 0; i < bot_mark1.size(); i++)
+			{
+				cout << mc_bot_mark1 << endl;
+			}
+			for (int i = 0; i < bot_mark2.size(); i++)
+			{
+				cout << mc_bot_mark2 << endl;
 			}
 			break;
 		}		

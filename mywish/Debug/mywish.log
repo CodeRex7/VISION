@@ -1,24 +1,32 @@
-﻿Build started 26-12-2016 19:59:42.
+﻿Build started 26-12-2016 21:12:41.
      1>Project "C:\Users\SoumyaGourab\Documents\Visual Studio 2013\Projects\mywish\mywish\mywish.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\mywish.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt mywish.cpp
          mywish.cpp
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(80): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(84): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(88): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(93): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(97): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(99): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(104): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(106): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(111): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(113): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(126): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(133): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(139): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(150): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(156): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(162): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(166): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(101): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(105): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(109): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(121): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(123): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(128): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(130): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(135): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(137): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(142): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(144): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(149): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(151): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(164): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(171): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(177): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(188): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(194): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(200): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(204): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(208): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\soumyagourab\documents\visual studio 2013\projects\mywish\mywish\mywish.cpp(212): warning C4018: '<' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\SoumyaGourab\Documents\Visual Studio 2013\Projects\mywish\Debug\mywish.exe" /INCREMENTAL /NOLOGO opencv_calib3d2413d.lib opencv_contrib2413d.lib opencv_core2413d.lib opencv_features2d2413d.lib opencv_flann2413d.lib opencv_gpu2413d.lib opencv_highgui2413d.lib opencv_imgproc2413d.lib opencv_legacy2413d.lib opencv_ml2413d.lib opencv_nonfree2413d.lib opencv_objdetect2413d.lib opencv_ocl2413d.lib opencv_photo2413d.lib opencv_stitching2413d.lib opencv_superres2413d.lib opencv_ts2413d.lib opencv_video2413d.lib opencv_videostab2413d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\SoumyaGourab\Documents\Visual Studio 2013\Projects\mywish\Debug\mywish.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\SoumyaGourab\Documents\Visual Studio 2013\Projects\mywish\Debug\mywish.lib" /MACHINE:X86 Debug\mywish.obj
          Debug\stdafx.obj
@@ -27,4 +35,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.26
+Time Elapsed 00:00:01.86
